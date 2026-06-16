@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Instrutores</title>
+</head>
+<body>
+
+<h1>Cadastro de Instrutores</h1>
+
+<a href="/painel">Voltar</a>
+
+<hr>
+
+<form action="/cadastrar_instrutor" method="POST">
+
+    <input type="text" name="nome" placeholder="Nome" required>
+
+    <input type="email" name="email" placeholder="Email" required>
+
+    <input type="text" name="telefone" placeholder="Telefone">
+
+    <input type="text" name="cref" placeholder="CREF">
+
+    <button type="submit">Cadastrar</button>
+
+</form>
+
+<hr>
+
+<h2>Lista de Instrutores</h2>
+
+<table border="1">
+
+<tr>
+    <th>ID</th>
+    <th>Nome</th>
+    <th>Email</th>
+    <th>CREF</th>
+    <th>Ações</th>
+</tr>
+
+{% for instrutor in instrutores %}
+
+<tr>
+
+    <td>{{ instrutor[0] }}</td>
+    <td>{{ instrutor[1] }}</td>
+    <td>{{ instrutor[2] }}</td>
+    <td>{{ instrutor[4] }}</td>
+
+    <td>
+
+        <a href="/excluir_instrutor/{{ instrutor[0] }}">
+            Excluir
+        </a>
+
+    </td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Aluno</title>
+</head>
+<body>
+
+<h1>Editar Aluno</h1>
+
+{% if mensagem %}
+<p>{{ mensagem }}</p>
+{% endif %}
+
+<form action="/atualizar_aluno/{{ aluno[0] }}" method="POST">
+
+    <input
+        type="text"
+        name="nome"
+        value="{{ aluno[1] }}"
+        required>
+
+    <br><br>
+
+    <input
+        type="email"
+        name="email"
+        value="{{ aluno[2] }}"
+        required>
+
+    <br><br>
+
+    <input
+        type="text"
+        name="telefone"
+        value="{{ aluno[3] }}">
+
+    <br><br>
+
+    <input
+        type="text"
+        name="matricula"
+        value="{{ aluno[4] }}">
+
+    <br><br>
+
+    <input
+        type="number"
+        step="0.01"
+        name="peso"
+        value="{{ aluno[5] }}">
+
+    <br><br>
+
+    <input
+        type="number"
+        step="0.01"
+        name="altura"
+        value="{{ aluno[6] }}">
+
+    <br><br>
+
+    <button type="submit">
+        Salvar Alterações
+    </button>
+
+</form>
+
+<br>
+
+<a href="/alunos">
+    Voltar
+</a>
+
+</body>
+</html>
